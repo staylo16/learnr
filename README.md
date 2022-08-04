@@ -1,3 +1,8 @@
+# WARNING
+
+This is a hack of the ‘learnr’ package from R that has been downloaded
+from ‘rstudio/learnr’ from github (version 0.10.5.9000).
+
 # learnr <a href='https://pkgs.rstudio.com/learnr'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
