@@ -203,7 +203,7 @@ question <- function(
       quiz_text(submit_button)
     }
 
-  try_again_button <-
+  try_again_button <- 
     if (rlang::is_missing(try_again_button)) {
       i18n_span("button.questiontryagain", "Try Again")
     } else {
@@ -217,14 +217,14 @@ question <- function(
     answers = answers,
     button_labels = list(
       submit = submit_button,
-      try_again = try_again_button
+      try_again = quiz_text("Re-select option(s)?")#try_again_button
     ),
     messages = list(
-      correct = quiz_text(correct),
-      try_again = quiz_text(try_again),
-      incorrect = quiz_text(incorrect),
-      message = quiz_text(message),
-      post_message = quiz_text(post_message)
+      correct = quiz_text(NULL), #quiz_text(correct),
+      try_again = quiz_text("Selection(s) registered. Press the button if you wish to re-select your option(s)."),#quiz_text(try_again),
+      incorrect = quiz_text(NULL), #quiz_text(incorrect),
+      message = quiz_text(NULL), #quiz_text(message),
+      post_message = quiz_text(NULL) #quiz_text(post_message)
     ),
     ids = list(
       answer = NS(q_id)("answer"),
@@ -420,6 +420,7 @@ question_module_server_impl <- function(
   question_state = NULL
 ) {
 
+  
   ns <- getDefaultReactiveDomain()$ns
   # set a seed for each user session for question methods to use
   question$seed <- random_seed()
@@ -433,7 +434,8 @@ question_module_server_impl <- function(
     # question has not been submitted
     if (is.null(submitted_answer())) return(NULL)
     # find out if answer is right
-    ret <- question_is_correct(question, submitted_answer())
+    ret <- mark_as(FALSE, NULL)   ###EDITED BY Simon Taylor
+    #ret <- question_is_correct(question, submitted_answer())
     if (!inherits(ret, "learnr_mark_as")) {
       stop("`question_is_correct(question, input$answer)` must return a result from `correct`, `incorrect`, or `mark_as`")
     }
@@ -528,8 +530,11 @@ question_module_server_impl <- function(
         # if there is an existing input$answer, display it.
         # if there is no answer... init with NULL
         # Do not re-render the UI for every input$answer change
+        #withLearnrMathJax(
+        #  question_ui_initialize(question, isolate(input$answer))
+        #)
         withLearnrMathJax(
-          question_ui_initialize(question, isolate(input$answer))
+          question_ui_initialize(question, NULL)    ##EDIT: replace with NULL so that options are reset!
         )
       )
     }
@@ -592,7 +597,7 @@ question_module_server_impl <- function(
         label    = as.character(question$label),
         question = as.character(question$question),
         answer   = as.character(input$answer),
-        correct  = is_correct_info()$correct
+        correct  = is_correct_info()$correct  ##Note: this will always be FALSE, irrespective of whether the submitted answer is correct!
       )
     )
 
@@ -600,14 +605,16 @@ question_module_server_impl <- function(
 
   observe({
     # Update the `question_state()` reactive to report state back to the Shiny session
-    req(submitted_answer(), is.reactive(question_state))
+    #req(submitted_answer(), is.reactive(question_state))
+    req(is.reactive(question_state))   #Note: *Do* the update even if submitted_answer() is NULL, clears answers when press try-again.
     current_answer_state <- list(
-      type = "question",
+      type = "question",             
       answer = submitted_answer(),
-      correct = is_correct_info()$correct
+      correct = NA#is_correct_info()$correct  ##Note: To suppress the storage of the correctness of the submission within the session
     )
     question_state(current_answer_state)
   })
+
 }
 
 
@@ -624,7 +631,7 @@ question_button_label <- function(question, label_type = "submit", is_valid = TR
   is_valid <- isTRUE(is_valid)
 
   default_class <- "btn-primary"
-  warning_class <- "btn-warning"
+  warning_class <- default_class#"btn-warning"    ##EDITED BY Simon Taylor
 
   action_button_id <- NS(question$ids$question)("action_button")
 
@@ -687,7 +694,7 @@ question_messages <- function(question, messages, is_correct, is_done) {
   if (is.null(messages)) {
     message_alert <- NULL
   } else {
-    alert_class <- if (is_correct) "alert-success" else "alert-danger"
+    alert_class <- "alert-info"#if (is_correct) "alert-success" else "alert-danger"
     if (length(messages) > 1) {
       # add breaks inbetween similar messages
       break_tag <- list(tags$br(), tags$br())
