@@ -2,3 +2,22 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
+.vscode
+Untitled
+issues
+node_modules
+
+# atom config folder
+.atom/
+
+# html tutorial output
+inst/tutorials/*/*.html
+inst/tutorials/*/*.sqlite
+
+# deployment output
+rsconnect/
+inst/doc
+doc
+Meta
+reference/
