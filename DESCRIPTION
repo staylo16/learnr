@@ -1,7 +1,7 @@
 Type: Package
 Package: learnr
 Title: Interactive Tutorials for R
-Version: 0.10.5.9000.9999
+Version: 0.10.5.9000
 Authors@R: c(
     person("Garrick", "Aden-Buie", , "garrick@rstudio.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7111-0077")),
@@ -24,14 +24,11 @@ Authors@R: c(
     person("Jake", "Archibald", role = c("ctb", "cph"),
            comment = "idb-keyval library"),
     person("i18next authors", role = c("ctb", "cph"),
-           comment = "i18next library"),
-    person("Simon", "Taylor", , "simon.taylor@ed.ac.uk", role = "ctb",
-           comment = "UoE IDS Hack")
+           comment = "i18next library")
   )
 Description: Create interactive tutorials using R Markdown. Use a
     combination of narrative, figures, videos, exercises, and quizzes to
-    create self-paced tutorials for learning about R and R packages. 
-    [UoE IDS package hack for quizzes]
+    create self-paced tutorials for learning about R and R packages.
 License: Apache License (>= 2.0)
 URL: https://rstudio.github.io/learnr/, https://github.com/rstudio/learnr
 BugReports: https://github.com/rstudio/learnr/issues
