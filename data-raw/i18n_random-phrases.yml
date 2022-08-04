@@ -1,0 +1,256 @@
+praise:
+  testing:
+    - RANDOM PRAISE.
+  en:
+    - Absolutely fabulous!
+    - Amazing!
+    - Awesome!
+    - Beautiful!
+    - Bravo!
+    - Cool job!
+    - Delightful!
+    - Excellent!
+    - Fantastic!
+    - Great work!
+    - I couldn't have done it better myself.
+    - Impressive work!
+    - Lovely job!
+    - Magnificent!
+    - Nice job!
+    - Out of this world!
+    - Resplendent!
+    - Smashing!
+    - Someone knows what they're doing :)
+    - Spectacular job!
+    - Splendid!
+    - Success!
+    - Super job!
+    - Superb work!
+    - Swell job!
+    - Terrific!
+    - That's a first-class answer!
+    - That's glorious!
+    - That's marvelous!
+    - Very good!
+    - Well done!
+    - What first-rate work!
+    - Wicked smaht!
+    - Wonderful!
+    - You aced it!
+    - You rock!
+    - You should be proud.
+  pt:
+    - Muito bom!
+    - Parabéns!
+    - Bom trabalho!
+    - Está fantástico!
+    - Sucesso!
+    - Excelente!
+    - Você sabe o que está fazendo :D
+    - Ótimo!
+  es:
+    - ¡Absolutamente fabuloso!
+    - ¡Increíble!
+    - ¡Impresionante!
+    - ¡Hermoso!
+    - ¡Bravo!
+    - ¡Buen trabajo!
+    - ¡Muy bien hecho!
+    - ¡Excelente!
+    - ¡Fantástico!
+    - ¡Excelente trabajo!
+    - Yo no podría haberlo hecho mejor.
+    - ¡Impresionante trabajo!
+    - ¡Bien hecho!
+    - ¡Magnífico!
+    - ¡Un trabajo bien hecho!
+    - ¡Fuera de este mundo!
+    - ¡Felicitaciones, bien hecho!
+    - ¡La estás rompiendo!
+    - Alguien sabe lo que está haciendo :)
+    - ¡Un trabajo espectacular!
+    - ¡Espléndido!
+    - ¡Éxito!
+    - ¡Super trabajo!
+    - ¡Excelente trabajo!
+    - ¡Buen trabajo!
+    - ¡Fantástico!
+    - ¡Esa es una respuesta de primera clase!
+    - ¡Esa solución es gloriosa!
+    - ¡Esto es maravilloso!
+    - ¡Muy bien!
+    - ¡Fabuloso!
+    - ¡Qué trabajo de primera!
+    - ¡Genial!
+    - ¡Maravilloso!
+    - ¡Lo superaste!
+    - ¡Excelente respuesta!
+    - Deberias sentir mucho orgullo.
+  tr:
+    - Kesinlikle muhteşem!
+    - Inanilmaz!
+    - Harika!
+    - Güzel!
+    - Aferin!
+    - Iyi iş!
+    - Keyifli!
+    - Mükemmel!
+    - Fantastik!
+    - Harika iş!
+    - Daha iyisini yapamazdım.
+    - Etkileyici çalışma!
+    - Harika iş!
+    - Fevkalade!
+    - Aferin!
+    - Harikulade!
+    - Çok etkileyici!
+    - Harika iş çikardin!
+    - Yaptigin işi cok iyi biliyorsun  :)
+    - Çok iyi iş çikardin!
+    - Çok basarili!
+    - Basari!
+    - Super iş!
+    - Harika iş!
+    - Iyi iş çikardin!
+    - Harika!
+    - Bu harika bir cevap!
+    - Çok harika!
+    - Olağanüstü !
+    - Çok iyi!
+    - Çok iyi yaptin!
+    - Çok mükemmel çalisma!
+    - Çok zekisin
+    - Harika!
+    - Başaracaksın!
+    - Çok iyisin!
+    - Gurur duymalısın.
+  emo:
+    - 😀
+    - 😁
+    - 😇
+    - 🥳
+    - 😻
+    - 😎
+    - 🥇
+    - 🎉
+    - 💯
+  de:
+    - Fantastisch!
+    - Bravo!
+    - Super!
+    - Gut gemacht!
+    - Weiter so!
+    - Gute Arbeit!
+    - Beeindruckend!
+    - Hervorragend!
+  ko:
+    - 잘 하셨습니다!
+    - 완벽합니다!
+    - 멋집니다!
+    - 오 정답입니다!
+    - 참 잘하셨습니다!
+    - 훌륭합니다!
+    - 매우 잘하셨습니다!
+    - 성공하셨습니다!
+    - 최고의 답변입니다!
+    - 멋집니다!
+  pl:
+    - Świetnie!
+    - Doskonale!
+    - Dobra robota!
+    - Dajesz radę!
+    - Dobrze Ci idzie!
+    - Tak trzymaj!
+    - Oby tak dalej!
+    - Cudownie!
+    - Pierwsza klasa!
+    - Bardzo dobrze!
+    - Jeśli to zadanie jest skocznią, to Ty jesteś Małyszem!
+    - Gratulacje!
+
+encouragement:
+  testing:
+    - RANDOM ENCOURAGEMENT.
+  en:
+    - Please try again.
+    - Give it another try.
+    - Let's try it again.
+    - Try it again; next time's the charm!
+    - Don't give up now, try it one more time.
+    - But no need to fret, try it again.
+    - Try it again. I have a good feeling about this.
+    - Try it again. You get better each time.
+    - Try it again. Perseverence is the key to success.
+    - "That's okay: you learn more from mistakes than successes. Let's do it one more time."
+  pt:
+    - Tente novamente, sinto que na próxima vai dar certo!
+    - Vamos tentar novamente?
+    - Não desista, tente novamente!
+    - Tente novamente. A perseverança é a chave para o sucesso.
+    - Tudo bem, nós aprendemos mais com os nossos erros do que com os acertos. Vamos tentar novamente.
+    - Não foi dessa vez, tente novamente!
+    - Vamos lá, tente novamente!
+  es:
+    - Inténtalo de nuevo.
+    - Prueba otra vez.
+    - Vamos a intentarlo otra vez.
+    - Pruéba de nuevo; ¡La próxima es la vencida!
+    - No te rindas ahora, inténtalo una vez más.
+    - No hay necesidad de preocuparse, inténtalo de nuevo.
+    - Prueba otra vez. Tengo un buen presentimiento.
+    - Intenta otra vez. Mejoras cada vez.
+    - Inténtalo nuevamente. La perseverancia es la clave del éxito.
+    - "Está bien: se aprende más de los errores que de los éxitos. Hagámoslo una vez más."
+  tr:
+    - Lütfen bir daha deneyin.
+    - Bir kez daha dene!
+    - Hadi bir daha deneyelim!
+    - Bir kez daha dene. Bu kez başaracaksın .
+    - Sakın bırakma. Bir kez daha dene
+    - Endişe etmeye gerek yok. Hadi bir daha dene.
+    - Bir kez daha dene. Bu kez olacak hissediyorum.
+    - Bir kez daha dene. Herseferinde daha iyi gelistiryorsun.
+    - Bir kez daha dene. Pes etmemek olayin sirri
+    - Sorun Degil. Basarılarına gore hatalarından cok daha fazla öğrenirsin
+  emo:
+    - 🤗
+    - 🤘
+    - 💪
+    - 🤞
+    - 🙌
+  de:
+    - Versuch es noch einmal.
+    - Lass es uns nochmal versuchen.
+    - Macht nichts! Versuch es gleich nochmal.
+    - Versuch es nochmal. Nächstes Mal klappt es bestimmt!
+    - Das war gar nicht so einfach. Probiere es gleich nochmal!
+  ko:
+    - 다시 시도해주세요.
+    - 한번 더 해보세요.
+    - 다시 시도하십시오.
+    - 다시 도전해서 맞춰보세요.
+    - 다시 도전해 보세요.
+    - 한번 더 시도해 보세요.
+    - 포기하지 말고, 한 번 더 도전해 보세요.
+    - 초조해 할 필요는 없습니다. 다시 시도해 보세요.
+    - 다시 시도하십시오. 이번에는 맞출 수 있습니다.
+    - 다시 시도하십시오. 인내는 성공의 열쇠입니다.
+  zh:
+    - 再试一次。  
+    - 再试一次吧。  
+    - 再接再厉。  
+    - 坚持就是胜利。  
+    - 再挑战一次吧。  
+    - 再试一次吧。  
+    - 不要放弃，加油。  
+    - 靡不有初,鲜克有终。  
+    - 没事儿，再来。 
+  pl:
+    - Nie udało się, ale spróbuj jeszcze raz.
+    - Na błędach najlepiej się uczymy.
+    - Nic straconego!
+    - To co? Może jeszcze jedna próba?
+    - Nie poddawaj się!
+    - Wytrwałość to klucz do sukcesu, spróbujmy jeszcze raz.
+    - Do skutku! Tak możemy się uczyć.
+    - Nikodemowi Dyzmie też na początku nie było łatwo!
