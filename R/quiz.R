@@ -145,6 +145,21 @@ question <- function(
     options = list()
 ) {
 
+  
+  ######### EDIT: Manual over-ride of options
+  correct = NULL
+  incorrect = NULL
+  try_again = "Answer registered. Press the 'Re-enter' button to change your answer."
+  message = NULL
+  post_message = NULL
+  loading = NULL
+  submit_button = "Register Answer"
+  try_again_button = "Re-enter Answer?"
+  allow_retry = TRUE
+  random_answer_order = TRUE
+  #########
+  
+  
   # one time tutor initialization
   initialize_tutorial()
 
@@ -203,7 +218,7 @@ question <- function(
       quiz_text(submit_button)
     }
 
-  try_again_button <- 
+  try_again_button <-
     if (rlang::is_missing(try_again_button)) {
       i18n_span("button.questiontryagain", "Try Again")
     } else {
@@ -217,14 +232,14 @@ question <- function(
     answers = answers,
     button_labels = list(
       submit = submit_button,
-      try_again = quiz_text("Re-select option(s)?")#try_again_button
+      try_again = try_again_button
     ),
     messages = list(
-      correct = quiz_text(NULL), #quiz_text(correct),
-      try_again = quiz_text("Selection(s) registered. Press the button if you wish to re-select your option(s)."),#quiz_text(try_again),
-      incorrect = quiz_text(NULL), #quiz_text(incorrect),
-      message = quiz_text(NULL), #quiz_text(message),
-      post_message = quiz_text(NULL) #quiz_text(post_message)
+      correct = quiz_text(correct),
+      try_again = quiz_text(try_again),
+      incorrect = quiz_text(incorrect),
+      message = quiz_text(message),
+      post_message = quiz_text(post_message)
     ),
     ids = list(
       answer = NS(q_id)("answer"),
@@ -420,7 +435,6 @@ question_module_server_impl <- function(
   question_state = NULL
 ) {
 
-  
   ns <- getDefaultReactiveDomain()$ns
   # set a seed for each user session for question methods to use
   question$seed <- random_seed()
@@ -434,7 +448,7 @@ question_module_server_impl <- function(
     # question has not been submitted
     if (is.null(submitted_answer())) return(NULL)
     # find out if answer is right
-    ret <- mark_as(FALSE, NULL)   ###EDITED BY Simon Taylor
+    ret <- mark_as(FALSE, NULL)         ###EDIT: Do not do any internal grading!
     #ret <- question_is_correct(question, submitted_answer())
     if (!inherits(ret, "learnr_mark_as")) {
       stop("`question_is_correct(question, input$answer)` must return a result from `correct`, `incorrect`, or `mark_as`")
@@ -534,7 +548,7 @@ question_module_server_impl <- function(
         #  question_ui_initialize(question, isolate(input$answer))
         #)
         withLearnrMathJax(
-          question_ui_initialize(question, NULL)    ##EDIT: replace with NULL so that options are reset!
+          question_ui_initialize(question, NULL)    ##EDIT: replace with NULL, old answer removed on re-enter/try-again
         )
       )
     }
@@ -597,7 +611,7 @@ question_module_server_impl <- function(
         label    = as.character(question$label),
         question = as.character(question$question),
         answer   = as.character(input$answer),
-        correct  = is_correct_info()$correct  ##Note: this will always be FALSE, irrespective of whether the submitted answer is correct!
+        correct  = is_correct_info()$correct  ##Edit note: this will always be FALSE, irrespective of whether the submitted answer is correct!
       )
     )
 
@@ -606,15 +620,14 @@ question_module_server_impl <- function(
   observe({
     # Update the `question_state()` reactive to report state back to the Shiny session
     #req(submitted_answer(), is.reactive(question_state))
-    req(is.reactive(question_state))   #Note: *Do* the update even if submitted_answer() is NULL, clears answers when press try-again.
+    req(is.reactive(question_state))   ##Edit: *Do* the update even if submitted_answer() is NULL so that stored answers are cleared on re-entry/try-again.
     current_answer_state <- list(
-      type = "question",             
+      type = "question",
       answer = submitted_answer(),
-      correct = NA#is_correct_info()$correct  ##Note: To suppress the storage of the correctness of the submission within the session
+      correct = NA#is_correct_info()$correct  ##Edit: To suppress the storage of answer correctness
     )
     question_state(current_answer_state)
   })
-
 }
 
 
@@ -631,7 +644,7 @@ question_button_label <- function(question, label_type = "submit", is_valid = TR
   is_valid <- isTRUE(is_valid)
 
   default_class <- "btn-primary"
-  warning_class <- default_class#"btn-warning"    ##EDITED BY Simon Taylor
+  warning_class <- default_class#"btn-warning"    ##EDIT: set re-enter/try-again button in default blue
 
   action_button_id <- NS(question$ids$question)("action_button")
 
@@ -694,7 +707,7 @@ question_messages <- function(question, messages, is_correct, is_done) {
   if (is.null(messages)) {
     message_alert <- NULL
   } else {
-    alert_class <- "alert-info"#if (is_correct) "alert-success" else "alert-danger"
+    alert_class <- "alert-info"#if (is_correct) "alert-success" else "alert-danger"  #EDIT: make message box default blue irrespective of answer correctness.
     if (length(messages) > 1) {
       # add breaks inbetween similar messages
       break_tag <- list(tags$br(), tags$br())
